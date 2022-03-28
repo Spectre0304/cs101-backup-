@@ -1,0 +1,79 @@
+Tower of Hanoi
+
+1.河內為越戰時北越的首都，現在的胡志明市；1883 年法國數學家 Edouard Lucas 曾提及河內之塔（Towers of Hanoi）故事，據說創世紀時 Benares 有座波羅教塔，是由三支鑽石棒（Pag）支撐，神在第一根棒上放置 64 個由上至下依由小至大排列的金盤（Disc），命令僧侶將金盤從第一根石棒移至第三根石棒，搬運過程遵守大盤在小盤之下的原則，若每日僅搬一盤， 當盤子全數搬運完畢之時，此塔將毀損，也是世界末日來臨之時。
+
+
+
+2.解決河內塔問題的最佳步驟為 2^N - 1 次，其中的N為盤子的數量，盤子移動是有規律性的。
+
+
+
+3.(1)一次只能搬移一個盤子
+
+   (2)盤子只能在三根柱子中被搬動 ( 你不能拿起來放在旁邊，必須挑一根柱子放下。)
+
+   (3)尺寸較小的盤子需永遠保持在最上方
+
+
+
+程式碼:
+
+#include <stdio.h>
+
+
+
+int moved=0;
+
+
+
+void hanoi(int n, char A, char B, char C) {
+
+    if(n == 1) {
+
+        printf("Move sheet from %c to %c\n", A, C);
+
+        moved++;
+
+    }
+
+    else {
+
+        hanoi(n-1, A, C, B);
+
+        hanoi(1, A, B, C);
+
+        hanoi(n-1, B, A, C);
+
+    }
+
+}
+
+
+
+int main() {
+
+    int n;
+
+    printf("Please key-in number of sheet：");
+
+    scanf("%d", &n);
+
+    hanoi(n, 'A', 'B', 'C');
+
+    printf("\nTotal moved %d steps\n\n",moved);
+
+    system("pause");
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+CPU:Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz   2.30 GHz
+
+運行時間:8.749s
