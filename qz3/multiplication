@@ -1,0 +1,37 @@
+#include<stdio.h> 
+
+
+
+int x=1;
+
+int y=1;
+
+int multiplication (int x, int y){
+
+    if (x<=9){
+
+        if (y<=9){
+
+            printf("%d*%d=%2d\t",x,y,x*y);
+
+            multiplication(x,y+1);
+
+            }
+
+        else{
+
+            printf("\n");
+
+            x++;
+
+            multiplication(x,1);
+
+            }   }   }
+
+int main() {
+
+    multiplication(x, y);
+
+    return 0;
+
+}

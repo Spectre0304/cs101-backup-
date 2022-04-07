@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+void example_1(int , char , char , char );
+
+int i;
+
+int main() {
+
+	FILE *fp;
+
+	fp=fopen("hanoi.txt","w+");
+
+	int n=3;
+
+	example_1(n, 'A', 'B', 'C');
+
+	fclose(fp);
+
+	return 0;
+
+}
+
+
+
+void example_1(int n, char A, char B, char C) {
+
+	FILE *fp;
+
+	fp=fopen("hanoi.txt","w+");
+
+	if(n==1) {
+
+		fprintf("Move disk 1 from %c to %c\n", A, C);
+
+	} else {
+
+		example_1(n-1, A, C, B);
+
+		example_1(1, A, B, C);
+
+		example_1(n-1, B, A, C);
+
+	}
+
+}
