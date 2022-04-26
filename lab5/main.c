@@ -44,7 +44,7 @@ char *func(char *str1, char *str2){
 
 	strcpy(z, str1);
 
-	strcpy(z, str2);
+	strcat(z, str2);
 
 	return z;
 
