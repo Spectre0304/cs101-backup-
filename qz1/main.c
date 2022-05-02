@@ -32,7 +32,7 @@ int main(void) {
 //time
 	time_t curtime;
 	struct tm *info;
-	char buffer[80];
+	char buffer[80]
 	time(&curtime);
 	info = localtime(&curtime);
 	strftime(buffer, 80, "%a %b %d %X %Y", info);
