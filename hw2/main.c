@@ -138,7 +138,7 @@ int main(void) {
 		fp_operator = fopen("operator_id.bin", "ab");
 		fwrite(emp_new, sizeof(emp_record_t), 1, fp_operator);
 		fclose(fp_operator);
-		printf("輸入完成\n");
+		printf("輸入完成\n")
 	}
 	
 	return 0;
