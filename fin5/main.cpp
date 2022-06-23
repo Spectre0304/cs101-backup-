@@ -1,5 +1,5 @@
 #include <iostream>
-#include <malloc.h> 
+#include <cstdlib>
 using namespace std;
 
 class MMmanger{
